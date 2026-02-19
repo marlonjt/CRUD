@@ -89,15 +89,15 @@ EXIT;
 Copia o enlaza el proyecto en tu directorio de Apache:
 
 ```bash
-sudo cp -r . /var/www/html/inventario
-sudo chown -R www-data:www-data /var/www/html/inventario
+sudo cp -r . /var/www/html/CRUD
+sudo chown -R www-data:www-data /var/www/html/CRUD
 sudo systemctl restart apache2
 ```
 
 ### 7. Accede al sistema
 
 ```
-http://localhost/inventario
+http://localhost/CRUD
 ```
 
 ---

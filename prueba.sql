@@ -13,10 +13,6 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `prueba`
@@ -42,7 +38,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `dirección_cliente`, `cedula_cliente`, `teléfono_cliente`) VALUES
-(1, 'juan', 'perez', 'madgalena', '123456', '020202');
+(1, 'Juan', 'Perez', 'Pintado', '123456', '020202');
 
 -- --------------------------------------------------------
 
@@ -77,10 +73,10 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre_producto`, `vunitario_producto`, `stock_producto`) VALUES
-(12, 'pizza', 10, 20),
+(12, 'Pizza', 10, 20),
 (14, 'papas', 1, 20),
-(15, 'coca-cola', 12, 1),
-(16, 'pepsi', 5, 3);
+(15, 'Coca-Cola', 12, 1),
+(16, 'Pepsi', 5, 3);
 
 -- --------------------------------------------------------
 
@@ -91,7 +87,7 @@ INSERT INTO `producto` (`id_producto`, `nombre_producto`, `vunitario_producto`, 
 CREATE TABLE `usuario` (
   `id_usuario` int(4) NOT NULL,
   `nombre_usuario` varchar(10) NOT NULL,
-  `password` varchar(10) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

@@ -1,0 +1,12 @@
+{
+    "name": "marlon/crud",
+    "authors": [
+        {
+            "name": "Marlon",
+            "email": "marlon.tituana20@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

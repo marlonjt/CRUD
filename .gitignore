@@ -1,0 +1,6 @@
+.vscode
+.sass-cache
+.DS_Store
+.env
+vendor/
+composer.lock

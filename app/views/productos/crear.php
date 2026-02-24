@@ -1,25 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Nuevo Producto</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/estilo.css">
-</head>
-<body>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h3>Nuevo Producto</h3>
-            <form method="POST" action="index.php?action=crear">
-                <input class="form-control mt-3" type="text" placeholder="Nombre" name="nombre_producto" required>
-                <input class="form-control mt-3" type="number" placeholder="Precio" name="vunitario_producto" required>
-                <input class="form-control mt-3" type="number" placeholder="Cantidad" name="stock_producto" required>
-                <button class="btn btn-primary mt-3" type="submit">Guardar</button>
-                <a class="btn btn-secondary mt-3" href="index.php">Cancelar</a>
-            </form>
-        </div>
+<?php $titulo = 'Nuevo Producto'; ?>
+<?php include __DIR__ . '/../layout/header.php' ?>
+
+<div class="form-panel">
+    <div class="form-panel__header">
+        <h4>
+            <i class="fas fa-plus-circle"></i>
+            Nuevo Producto
+        </h4>
+    </div>
+    <div class="form-panel__body">
+        <form method="POST" action="index.php?action=crear">
+
+            <div class="campo">
+                <label for="nombre">Nombre del producto</label>
+                <input class="form-control" type="text" id="nombre"
+                    placeholder="Ej: Laptop Dell XPS" name="nombre_producto" required>
+            </div>
+
+            <div class="campo">
+                <label for="precio">Precio unitario</label>
+                <input class="form-control" type="number" id="precio"
+                    placeholder="0.00" step="0.01" name="vunitario_producto" required>
+            </div>
+
+            <div class="campo">
+                <label for="stock">Stock disponible</label>
+                <input class="form-control" type="number" id="stock"
+                    placeholder="0" name="stock_producto" required>
+            </div>
+
+            <div class="form-acciones">
+                <button class="btn-guardar" type="submit">
+                    <i class="fas fa-save"></i>
+                    Guardar
+                </button>
+                <a class="btn-cancelar" href="index.php">
+                    <i class="fas fa-times"></i>
+                    Cancelar
+                </a>
+            </div>
+
+        </form>
     </div>
 </div>
-</body>
-</html>
+
+<?php include __DIR__ . '/../../views/layout/footer.php' ?>

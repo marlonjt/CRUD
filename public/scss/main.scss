@@ -1,0 +1,17 @@
+// =============================================================================
+// MAIN - Archivo principal SCSS
+// Compilar desde la raíz del proyecto CRUD/:
+// sass --watch public/scss/main.scss:public/css/main.css
+// =============================================================================
+
+// 1. Bootstrap completo
+//    Ruta relativa desde public/scss/ hasta node_modules/
+@use '../../node_modules/bootstrap/scss/bootstrap';
+
+// 2. Tus partials en orden
+@use 'variables';
+@use 'base';
+@use 'navbar';
+@use 'sidebar';
+@use 'tablas';
+@use 'formularios';

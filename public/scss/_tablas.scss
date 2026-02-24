@@ -1,0 +1,146 @@
+// =============================================================================
+// TABLAS - Estilos de la tabla de productos
+// =============================================================================
+@use 'variables' as v;
+
+.table-container {
+    background: v.$color-white;
+    border-radius: v.$border-radius-md;
+    box-shadow: v.$shadow-md;
+    overflow: hidden;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: v.$spacing-md v.$spacing-lg;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+        h4 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: v.$font-size-md;
+            font-weight: v.$font-weight-bold;
+            color: v.$color-text;
+
+            i {
+                color: v.$color-sidebar-medium;
+                margin-right: v.$spacing-xs;
+            }
+        }
+    }
+}
+
+// Tabla - sobre escribir Bootstrap con CSS variables y especificidad
+.table-container .table {
+    margin-bottom: 0;
+
+    thead tr {
+        --bs-table-bg: transparent;
+        --bs-table-border-color: transparent;
+        --bs-table-color: #ffffff;
+        background: linear-gradient(135deg, v.$color-sidebar-dark, v.$color-sidebar-medium) !important;
+        text-align: center;
+
+        th {
+            color: v.$color-white !important;
+            font-weight: v.$font-weight-semi;
+            font-size: v.$font-size-sm;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 14px v.$spacing-md;
+            border: none !important;
+            background: transparent !important;
+        }
+    }
+
+    tbody tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        transition: v.$transition-fast;
+        text-align: center;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            --bs-table-bg: rgba(21, 101, 192, 0.04);
+        }
+
+        td {
+            padding: 13px v.$spacing-md;
+            vertical-align: middle;
+            color: v.$color-text;
+            font-size: v.$font-size-base;
+            border: none !important;
+
+            &.precio {
+                font-weight: v.$font-weight-bold;
+                color: v.$color-sidebar-medium;
+            }
+        }
+    }
+}
+
+// Botones de acción
+.btn-accion {
+    width: 32px;
+    height: 32px;
+    border-radius: v.$border-radius-sm;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: v.$transition-fast;
+    margin: 0 2px;
+    text-decoration: none;
+
+    &--editar {
+        background: rgba(v.$color-warning, 0.12);
+        color: v.$color-warning;
+
+        &:hover {
+            background: v.$color-warning;
+            color: v.$color-white;
+        }
+    }
+
+    &--eliminar {
+        background: rgba(v.$color-danger, 0.12);
+        color: v.$color-danger;
+
+        &:hover {
+            background: v.$color-danger;
+            color: v.$color-white;
+        }
+    }
+}
+
+// Botón nuevo producto
+.btn-nuevo {
+    background: linear-gradient(135deg, v.$color-sidebar-dark, v.$color-sidebar-medium);
+    color: v.$color-white;
+    border: none;
+    border-radius: v.$border-radius-sm;
+    padding: 8px v.$spacing-md;
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-semi;
+    display: inline-flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+    transition: v.$transition-base;
+    box-shadow: v.$shadow-sm;
+    text-decoration: none;
+
+    &:hover {
+        box-shadow: v.$shadow-md;
+        transform: translateY(-1px);
+        color: v.$color-white;
+        opacity: 0.95;
+    }
+
+    i {
+        font-size: 13px;
+    }
+}

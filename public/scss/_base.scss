@@ -1,0 +1,66 @@
+// =============================================================================
+// BASE - Reset y layout principal del dashboard
+// Define la estructura flex: sidebar fijo + contenido dinámico
+// =============================================================================
+@use 'variables' as v;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: v.$font-main;
+    font-size: v.$font-size-base;
+    background-color: v.$color-bg;
+    color: v.$color-text;
+    min-height: 100vh;
+}
+
+// Layout principal: sidebar + contenido lado a lado
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+// Área de contenido principal - ocupa el resto del espacio
+.contenido-principal {
+    margin-left: v.$sidebar-width;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// Área donde va el contenido de cada vista
+.contenido {
+    padding: v.$spacing-lg;
+    flex: 1;
+
+    // Título de cada sección
+    h3,
+    h4 {
+        color: v.$color-text;
+        font-weight: v.$font-weight-bold;
+        margin-bottom: v.$spacing-md;
+        padding-bottom: v.$spacing-xs;
+        border-bottom: 3px solid v.$color-sidebar-medium;
+        display: inline-block;
+    }
+}
+
+// Tarjeta contenedora genérica
+.card-panel {
+    background: v.$color-white;
+    border-radius: v.$border-radius-md;
+    padding: v.$spacing-lg;
+    box-shadow: v.$shadow-md;
+    margin-bottom: v.$spacing-md;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

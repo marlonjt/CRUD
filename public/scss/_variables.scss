@@ -1,0 +1,62 @@
+// =============================================================================
+// VARIABLES GLOBALES
+// Paleta: Azul marino profesional
+// Modifica aquí para cambiar el tema completo sin tocar otros archivos.
+// =============================================================================
+
+// COLORES PRINCIPALES
+$color-sidebar-dark: #1a237e; // Azul muy oscuro - fondo sidebar
+$color-sidebar-medium: #1565c0; // Azul medio - hover y activos
+$color-sidebar-light: #1976d2; // Azul claro - detalles
+$color-accent: #42a5f5; // Azul cielo - acentos y bordes activos
+
+// COLORES DE FONDO
+$color-bg: #f4f6f9; // Gris muy claro - fondo contenido
+$color-white: #ffffff;
+$color-navbar-bg: #ffffff;
+
+// COLORES DE TEXTO
+$color-text: #2d3748; // Texto principal oscuro
+$color-text-muted: #718096; // Texto secundario gris
+$color-text-sidebar: #e8eaf6; // Texto sidebar claro
+$color-text-sidebar-muted: rgba(255, 255, 255, 0.5);
+
+// COLORES DE ACCIONES
+$color-success: #27ae60; // Verde - guardar / nuevo
+$color-danger: #e53935; // Rojo - eliminar
+$color-warning: #f39c12; // Amarillo - editar
+$color-info: $color-sidebar-medium;
+
+// SOMBRAS
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+$shadow-sidebar: 4px 0 15px rgba(0, 0, 0, 0.15);
+
+// TIPOGRAFÍA
+$font-main: 'Nunito', 'Segoe UI', sans-serif;
+$font-size-base: 14px;
+$font-size-sm: 12px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-weight-normal: 400;
+$font-weight-semi: 600;
+$font-weight-bold: 700;
+
+// LAYOUT
+$sidebar-width: 240px;
+$navbar-height: 60px;
+$border-radius-sm: 6px;
+$border-radius-md: 10px;
+$border-radius-lg: 14px;
+
+// ESPACIADO
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$spacing-xl: 40px;
+
+// TRANSICIONES
+$transition-fast: all 0.2s ease;
+$transition-base: all 0.3s ease;

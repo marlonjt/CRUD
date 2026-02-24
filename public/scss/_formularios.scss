@@ -1,0 +1,189 @@
+// =============================================================================
+// FORMULARIOS - Crear y Editar producto + Login
+// =============================================================================
+@use 'variables' as v;
+@use 'sass:color';
+
+// Contenedor del formulario
+.form-panel {
+    background: v.$color-white;
+    border-radius: v.$border-radius-md;
+    box-shadow: v.$shadow-md;
+    overflow: hidden;
+    max-width: 560px;
+
+    &__header {
+        background: linear-gradient(135deg, v.$color-sidebar-dark, v.$color-sidebar-medium);
+        padding: v.$spacing-md v.$spacing-lg;
+
+        h4 {
+            color: v.$color-white;
+            font-weight: v.$font-weight-bold;
+            margin: 0;
+            font-size: v.$font-size-md;
+
+            i {
+                margin-right: v.$spacing-xs;
+            }
+        }
+    }
+
+    &__body {
+        padding: v.$spacing-lg;
+    }
+}
+
+// Grupo de campo con label flotante
+.campo {
+    margin-bottom: v.$spacing-md;
+
+    label {
+        display: block;
+        font-size: v.$font-size-sm;
+        font-weight: v.$font-weight-semi;
+        color: v.$color-text-muted;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-control {
+        border: 1.5px solid rgba(0, 0, 0, 0.1);
+        border-radius: v.$border-radius-sm;
+        padding: 10px v.$spacing-sm;
+        font-size: v.$font-size-base;
+        color: v.$color-text;
+        font-family: v.$font-main;
+        transition: v.$transition-fast;
+        width: 100%;
+
+        &:focus {
+            border-color: v.$color-sidebar-medium;
+            box-shadow: 0 0 0 3px rgba(v.$color-sidebar-medium, 0.12);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+// Botones del formulario
+.form-acciones {
+    display: flex;
+    gap: v.$spacing-sm;
+    margin-top: v.$spacing-lg;
+
+    .btn-guardar {
+        background: linear-gradient(135deg, v.$color-success, color.adjust(v.$color-success, $lightness: -8%));
+        color: v.$color-white;
+        border: none;
+        border-radius: v.$border-radius-sm;
+        padding: 10px v.$spacing-lg;
+        font-weight: v.$font-weight-semi;
+        font-family: v.$font-main;
+        font-size: v.$font-size-base;
+        display: inline-flex;
+        align-items: center;
+        gap: v.$spacing-xs;
+        transition: v.$transition-base;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: v.$shadow-md;
+            transform: translateY(-1px);
+        }
+    }
+
+    .btn-cancelar {
+        background: rgba(0, 0, 0, 0.06);
+        color: v.$color-text-muted;
+        border: none;
+        border-radius: v.$border-radius-sm;
+        padding: 10px v.$spacing-lg;
+        font-weight: v.$font-weight-semi;
+        font-family: v.$font-main;
+        font-size: v.$font-size-base;
+        display: inline-flex;
+        align-items: center;
+        gap: v.$spacing-xs;
+        transition: v.$transition-fast;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: v.$color-text;
+        }
+    }
+}
+
+// ── LOGIN ─────────────────────────────────────────────────────────────────────
+.login-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, v.$color-sidebar-dark 0%, v.$color-sidebar-medium 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$spacing-lg;
+}
+
+.login-card {
+    background: v.$color-white;
+    border-radius: v.$border-radius-lg;
+    box-shadow: v.$shadow-lg;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+
+    &__header {
+        background: linear-gradient(135deg, v.$color-sidebar-dark, v.$color-sidebar-medium);
+        padding: v.$spacing-xl v.$spacing-lg;
+        text-align: center;
+
+        i {
+            font-size: 40px;
+            color: v.$color-accent;
+            margin-bottom: v.$spacing-sm;
+            display: block;
+        }
+
+        h2 {
+            color: v.$color-white;
+            font-weight: v.$font-weight-bold;
+            font-size: v.$font-size-lg;
+            margin: 0;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: v.$font-size-sm;
+            margin-top: 6px;
+        }
+    }
+
+    &__body {
+        padding: v.$spacing-lg;
+    }
+
+    .btn-login {
+        width: 100%;
+        background: linear-gradient(135deg, v.$color-sidebar-dark, v.$color-sidebar-medium);
+        color: v.$color-white;
+        border: none;
+        border-radius: v.$border-radius-sm;
+        padding: 12px;
+        font-size: v.$font-size-md;
+        font-weight: v.$font-weight-bold;
+        font-family: v.$font-main;
+        transition: v.$transition-base;
+        cursor: pointer;
+        margin-top: v.$spacing-sm;
+
+        &:hover {
+            box-shadow: v.$shadow-md;
+            transform: translateY(-1px);
+        }
+    }
+}

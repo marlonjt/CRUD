@@ -1,0 +1,66 @@
+// =============================================================================
+// NAVBAR - Barra superior del dashboard
+// Muestra: título de sección + usuario activo
+// Posición: fija en top, después del sidebar
+// =============================================================================
+@use 'variables' as v;
+
+.navbar-dashboard {
+    height: v.$navbar-height;
+    background: v.$color-white;
+    box-shadow: v.$shadow-sm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 v.$spacing-lg;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    // Título de la página actual
+    &__titulo {
+        font-size: v.$font-size-md;
+        font-weight: v.$font-weight-bold;
+        color: v.$color-text;
+        display: flex;
+        align-items: center;
+        gap: v.$spacing-xs;
+
+        i {
+            color: v.$color-sidebar-medium;
+        }
+    }
+
+    // Info del usuario a la derecha
+    &__usuario {
+        display: flex;
+        align-items: center;
+        gap: v.$spacing-sm;
+
+        // Avatar circular con inicial
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, v.$color-sidebar-dark, v.$color-sidebar-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: v.$color-white;
+            font-weight: v.$font-weight-bold;
+            font-size: v.$font-size-sm;
+        }
+
+        .nombre {
+            font-weight: v.$font-weight-semi;
+            color: v.$color-text;
+            font-size: v.$font-size-base;
+        }
+
+        .rol {
+            font-size: v.$font-size-sm;
+            color: v.$color-text-muted;
+        }
+    }
+}

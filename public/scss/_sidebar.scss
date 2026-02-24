@@ -1,0 +1,128 @@
+// =============================================================================
+// SIDEBAR - Menú lateral fijo
+// Secciones: logo + navegación + cerrar sesión al fondo
+// =============================================================================
+@use 'variables' as v;
+@use 'sass:color';
+
+.sidebar {
+    width: v.$sidebar-width;
+    min-height: 100vh;
+    background: linear-gradient(180deg, v.$color-sidebar-dark 0%, color.adjust(v.$color-sidebar-dark, $lightness: -5%) 100%);
+    box-shadow: v.$shadow-sidebar;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+    // ── Logo / Marca ──────────────────────────────
+    &__logo {
+        height: v.$navbar-height;
+        display: flex;
+        align-items: center;
+        padding: 0 v.$spacing-md;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        gap: v.$spacing-sm;
+
+        i {
+            font-size: 22px;
+            color: v.$color-accent;
+        }
+
+        span {
+            font-size: v.$font-size-md;
+            font-weight: v.$font-weight-bold;
+            color: v.$color-white;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    // ── Navegación principal ──────────────────────
+    &__nav {
+        flex: 1;
+        padding: v.$spacing-md 0;
+        list-style: none;
+
+        // Etiqueta de sección
+        .nav-label {
+            font-size: 10px;
+            font-weight: v.$font-weight-bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: v.$color-text-sidebar-muted;
+            padding: v.$spacing-sm v.$spacing-md v.$spacing-xs;
+            margin-top: v.$spacing-xs;
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            gap: v.$spacing-sm;
+            padding: 11px v.$spacing-md;
+            color: v.$color-text-sidebar;
+            font-size: v.$font-size-base;
+            font-weight: v.$font-weight-semi;
+            transition: v.$transition-fast;
+            border-left: 3px solid transparent;
+            margin: 2px 0;
+
+            i {
+                width: 20px;
+                text-align: center;
+                font-size: 15px;
+                color: v.$color-text-sidebar-muted;
+                transition: v.$transition-fast;
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.08);
+                color: v.$color-white;
+                border-left-color: v.$color-accent;
+
+                i {
+                    color: v.$color-accent;
+                }
+            }
+
+            // Ítem activo
+            &.active {
+                background: rgba(255, 255, 255, 0.12);
+                color: v.$color-white;
+                border-left-color: v.$color-accent;
+
+                i {
+                    color: v.$color-accent;
+                }
+            }
+        }
+    }
+
+    // ── Cerrar sesión al fondo ────────────────────
+    &__footer {
+        padding: v.$spacing-md;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: v.$spacing-sm;
+            padding: 10px v.$spacing-sm;
+            border-radius: v.$border-radius-sm;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: v.$font-size-base;
+            font-weight: v.$font-weight-semi;
+            transition: v.$transition-fast;
+
+            i {
+                font-size: 15px;
+            }
+
+            &:hover {
+                background: rgba(v.$color-danger, 0.15);
+                color: color.adjust(v.$color-danger, $lightness: 20%);
+            }
+        }
+    }
+}

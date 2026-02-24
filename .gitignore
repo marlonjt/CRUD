@@ -1,9 +1,9 @@
 .vscode
 .DS_Store
 .env
-vendor/
-composer.lock
 .sass-cache/
-css/main.css.map
+composer.lock
+vendor/
 node_modules/
 package-lock.json
+public/css/main.css.map

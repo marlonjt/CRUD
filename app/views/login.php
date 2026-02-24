@@ -24,7 +24,7 @@
                 <?php if (isset($error)): ?>
                     <div class="alert alert-danger mb-3">
                         <i class="fas fa-exclamation-circle me-2"></i>
-                        <?php echo $error ?>
+                        <?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
                     </div>
                 <?php endif ?>
 

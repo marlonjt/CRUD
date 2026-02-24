@@ -21,13 +21,22 @@ class ProductoController
     public function crear()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->modelo->crear(
-                $_POST['nombre_producto'],
-                $_POST['vunitario_producto'],
-                $_POST['stock_producto']
-            );
-            header('Location: index.php');
-            exit;
+            $nombre = trim($_POST['nombre_producto']);
+            $precio = trim($_POST['vunitario_producto']);
+            $stock = trim($_POST['stock_producto']);
+            if ($nombre == '' || $precio == '' || $stock == '') {
+                $error = 'Los campos no pueden estar vacíos';
+            } elseif ($precio <= 0 || $stock <= 0) {
+                $error = 'Precio y Stock deben ser mayor 0';
+            } else {
+                $this->modelo->crear(
+                    $nombre,
+                    $precio,
+                    $stock
+                );
+                header('Location: index.php');
+                exit;
+            }
         }
         require_once __DIR__ . '/../views/productos/crear.php';
     }
@@ -36,14 +45,23 @@ class ProductoController
     {
         $id = $_GET['id_producto'];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->modelo->actualizar(
-                $id,
-                $_POST['nombre_producto'],
-                $_POST['vunitario_producto'],
-                $_POST['stock_producto']
-            );
-            header('Location: index.php');
-            exit;
+            $nombre = trim($_POST['nombre_producto']);
+            $precio = trim($_POST['vunitario_producto']);
+            $stock = trim($_POST['stock_producto']);
+            if ($nombre == '' || $precio == '' || $stock == '') {
+                $error = 'Los campos no pueden estar vacíos';
+            } elseif ($precio <= 0 || $stock <= 0) {
+                $error = 'Precio y Stock deben ser mayor 0';
+            } else {
+                $this->modelo->actualizar(
+                    $id,
+                    $nombre,
+                    $precio,
+                    $stock
+                );
+                header('Location: index.php');
+                exit;
+            }
         }
         $producto = $this->modelo->obtenerPorId($id);
         require_once __DIR__ . '/../views/productos/editar.php';
@@ -51,7 +69,7 @@ class ProductoController
 
     public function eliminar()
     {
-        $id = $_GET['id_producto'];
+        $id = $_POST['id_producto'];
         $this->modelo->eliminar($id);
         header('Location: index.php');
         exit;

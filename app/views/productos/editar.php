@@ -9,26 +9,34 @@
         </h4>
     </div>
     <div class="form-panel__body">
-        <form method="POST" action="index.php?action=editar&id_producto=<?php echo $producto['id_producto'] ?>">
+
+        <?php if (isset($error)): ?>
+            <div class="alert alert-danger mb-3">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
+            </div>
+        <?php endif ?>
+
+        <form method="POST" action="index.php?action=editar&id_producto=<?php echo htmlspecialchars($producto['id_producto'], ENT_QUOTES, 'UTF-8') ?>">
 
             <div class="campo">
                 <label for="nombre">Nombre del producto</label>
                 <input class="form-control" type="text" id="nombre"
-                    value="<?php echo $producto['nombre_producto'] ?>"
+                    value="<?php echo htmlspecialchars($producto['nombre_producto'], ENT_QUOTES, 'UTF-8') ?>"
                     name="nombre_producto" required>
             </div>
 
             <div class="campo">
                 <label for="precio">Precio unitario</label>
                 <input class="form-control" type="number" id="precio"
-                    value="<?php echo $producto['vunitario_producto'] ?>"
+                    value="<?php echo htmlspecialchars($producto['vunitario_producto'], ENT_QUOTES, 'UTF-8') ?>"
                     step="0.01" name="vunitario_producto" required>
             </div>
 
             <div class="campo">
                 <label for="stock">Stock disponible</label>
                 <input class="form-control" type="number" id="stock"
-                    value="<?php echo $producto['stock_producto'] ?>"
+                    value="<?php echo htmlspecialchars($producto['stock_producto'], ENT_QUOTES, 'UTF-8') ?>"
                     name="stock_producto" required>
             </div>
 

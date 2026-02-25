@@ -4,6 +4,13 @@ Sistema web para gestión de inventario y ventas desarrollado como proyecto de i
 
 ---
 
+## 🚀 Demo en vivo
+
+[![CRUD PHP](https://img.shields.io/badge/🔗-CRUD%20en%20vivo-blue?style=for-the-badge)](https://web-production-32ced.up.railway.app/index.php?action=login)
+
+- **User** — marlon
+- **Password** — prueba
+
 ## 🧰 Stack Tecnológico
 
 - **PHP** — Lógica del servidor

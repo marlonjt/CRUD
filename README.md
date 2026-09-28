@@ -8,6 +8,10 @@ Sistema web para gestión de inventario y ventas desarrollado como proyecto de i
 
 [![CRUD PHP](https://img.shields.io/badge/🔗-CRUD%20en%20vivo-blue?style=for-the-badge)](https://web-production-32ced.up.railway.app/index.php?action=login)
 
+> ⚠️ **Nota sobre el servidor de despliegue (Railway Free Tier):**
+ 
+> El servicio está alojado en la versión gratuita de Railway. Si la aplicación no ha recibido visitas recientes, el contenedor entra en modo de suspensión (*sleep mode*). **Al ingresar por primera vez, la página puede tardar entre 1 y 2 minutos en iniciar el servidor y cargar correctamente.** Por favor, espera unos momentos o recarga la página.
+
 - **User** — marlon
 - **Password** — prueba
 
